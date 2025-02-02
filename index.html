@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiesta de Cumpleaños</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script> <!-- Incluir la biblioteca de confeti -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffccff;
+            background-image: url('decoracion.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff66b2;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            margin: 15px;
+            text-decoration: none;
+            background-color: #ff66b2;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ff3385;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .header-image {
+            display: block; /* Cambiar a bloque para centrar */
+            margin: 0 auto; /* Centrar la imagen */
+            width: 100%; /* Ajustar el ancho de la imagen al 100% */
+            max-width: 600px; /* Limitar el ancho máximo de la imagen */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-bottom: 20px; /* Espaciado debajo de la imagen */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 ¡Feliz Cumpleaños, Miniñaa! 🎈</h1>
+        <img src="imagenes/foto_cumple.jpeg" alt="Fiesta de Cumpleaños" class="header-image"> <!-- Imagen de encabezado -->
+        <button class="btn" onclick="playMusic()">Reproducir Música</button>
+        <button class="btn" onclick="stopMusic()">Detener Música</button>
+        <br>
+        <button class="btn" onclick="throwConfetti()">🎉 Tirar Confeti</button> <!-- Botón para tirar confeti -->
+        <a href="fotos.html" class="btn">📸 Ver Fotos</a>
+        <a href="texto.html" class="btn">📜 Mensajes Especiales</a>
+    </div>
+
+    <audio id="cumpleAudio" autoplay loop>
+        <source src="musica/felizcumple.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script>
+        var audio = document.getElementById('cumpleAudio');
+
+        function playMusic() {
+            audio.play();
+        }
+
+        function stopMusic() {
+            audio.pause();
+            audio.currentTime = 0; // Reinicia la canción al principio
+        }
+
+        function throwConfetti() {
+            confetti(); // Llama a la función de confeti
+        }
+    </script>
+
+    <footer>
+        &copy; 2025 Fiesta de Cumpleaños. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
